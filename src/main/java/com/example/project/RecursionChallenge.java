@@ -81,11 +81,15 @@
             }
 
             public static Boolean isPalindrome(String s){
-                if (s.equals(reverse(s))) {
+                if (s.length() <= 1) {
                     return true;
-                } else {
-                return false;
                 }
+
+                if (!s.substring(0,1).equals(s.substring(s.length() - 1))) {
+                    return false;
+                }
+
+                return isPalindrome(s.substring(1,s.length() - 1));
             }
 
     }
